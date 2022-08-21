@@ -3,19 +3,20 @@ version: "3.7"
 services:
   db:
     image: postgres
+    restart: always
     volumes:
-      - ./data/db:/var/lib/postgresql/data
+      - ./pg-data:/pg-data
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-  web:
+  backend:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8080
     volumes:
       - .:/code
     ports:
-      - "8000:8000"
+      - "8080:8080"
     environment:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
