@@ -37,9 +37,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_extensions",
+    "rest_framework",
 ]
 
-WEB_SCRAPPER_APPS = ["stats", "scrapper"]
+WEB_SCRAPPER_APPS = [
+    "stats",
+]
 
 INSTALLED_APPS += WEB_SCRAPPER_APPS
 
@@ -131,3 +135,12 @@ STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Swagger docs settings
+SWAGGER_SETTINGS = {
+    "VALIDATOR_URL": None,
+    "JSON_EDITOR": True,
+    "DEFAULT_INFO": "common.api_info.info",
+}
+SWAGGER_DOCS_URL = "/docs/"
+SWAGGER_DOCS_API_URL_OVERRIDE = None
