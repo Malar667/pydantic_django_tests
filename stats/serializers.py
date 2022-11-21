@@ -9,9 +9,10 @@ class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Author
         fields = ("id", "last_name", "first_name")
+        read_only_fields = ("id",)
 
 
-class AuthorSchema(djantic.ModelSchema):
+class AuthorDjanticSchema(djantic.ModelSchema):
     class Config:
         model = Author
         model_fields = ("id", "last_name", "first_name")

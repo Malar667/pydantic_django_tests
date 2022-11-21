@@ -1,4 +1,7 @@
-AUTHORS_INPUT = """
+from rest_framework.utils import json
+
+AUTHORS_INPUT = json.loads(
+    """
 [
     {
         "last_name": "Surname 0",
@@ -4002,3 +4005,4 @@ AUTHORS_INPUT = """
     }
 ]
 """
+)
