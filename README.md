@@ -1,1 +1,1 @@
-# web_scrapper
+# testing pydantic with django
